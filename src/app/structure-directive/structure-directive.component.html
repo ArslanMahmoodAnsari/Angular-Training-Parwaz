@@ -1,0 +1,31 @@
+<h1>structure directive Examples</h1>
+
+<!-- <p *ngIf="shouldShow; else elseBlock">Hello from If conditon</p>
+<p *ngIf="!shouldShow">Hello from else conditon with not operator</p>
+
+<ng-template #elseBlock>Hello from else conditon with ng Template</ng-template>
+
+<button (click)="toggleMe()">Toggle Condition</button>
+
+<hr />
+<p *ngFor="let name of studentsNames; index as i">{{ i }}. {{ name }}</p> -->
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Grade</th>
+		<th>Section</th>
+	</tr>
+	<tr *ngFor="let student of students">
+		<td
+			[class.gradeA]="student.grade === 'A'"
+			[class.gradeB]="student.grade === 'B'"
+			[class.gradeC]="student.grade === 'C'"
+			[class.gradeD]="student.grade === 'D'"
+		>
+			{{ student.name }}
+		</td>
+		<td>{{ student.grade }}</td>
+		<td>{{ student.section }}</td>
+	</tr>
+</table>

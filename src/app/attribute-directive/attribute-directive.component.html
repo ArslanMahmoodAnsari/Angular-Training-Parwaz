@@ -1,0 +1,26 @@
+<h1>Attributive Directive Examples</h1>
+<h1>My First Attribute Directive</h1>
+
+<h2>Pick a highlight color</h2>
+<div>
+	<input type="radio" name="colors" (click)="color = 'lightgreen'" />Green
+	<input type="radio" name="colors" (click)="color = 'yellow'" />Yellow
+	<input type="radio" name="colors" (click)="color = 'cyan'" />Cyan
+</div>
+
+<p [appHighlight]="color" defaultColor="orange">Working with Custom Directive is great</p>
+
+<p class="textOrange" [appHighlight]="'blueviolet'" defaultColor="orange">
+	this is in orange Class with class attribute
+</p>
+<p [ngClass]="{ textOrange: false }" [appHighlight]="color">
+	this is in orange Class with ngClass
+</p>
+<p [class.textBlue]="true" [class.textOrange]="true">
+	this is in orange Class with class name
+</p>
+<hr />
+<p class="textOrange">this is in orange Class with class attribute</p>
+<p [ngClass]="{ textOrange: useClass }">this is in orange Class with ngClass</p>
+<p [class.textBlue]="useClass">this is in orange Class with class name</p>
+<p (click)="changeColor()">Allow Classes!</p>
