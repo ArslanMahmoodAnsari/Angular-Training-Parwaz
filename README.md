@@ -1,4 +1,6 @@
-# DirectivesPractice
+# Angular Training Parwaz
+
+## In this project we will cover some concepts of Angular, As the part of angular course
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
