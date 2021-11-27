@@ -1,0 +1,9 @@
+<h2>Demo of Viewchild</h2>
+<div>
+	<app-child-comp-view-child (displayFun)="displayFun($event)"></app-child-comp-view-child>
+</div>
+<h3>Result</h3>
+<span>{{ result }}</span>
+<br />
+<br />
+<input type="button" value="Reset" (click)="reset()" />
