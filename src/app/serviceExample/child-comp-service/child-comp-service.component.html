@@ -1,0 +1,23 @@
+<div class="ibox-content">
+	<div class="row">
+		<div class="col-md-4">Enter First Number</div>
+		<div class="col-md-8">
+			<input type="number" [(ngModel)]="firstNumber" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">Enter Second Number</div>
+		<div class="col-md-8">
+			<input type="number" [(ngModel)]="secondNumber" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-8">
+			<input type="button" value="+" (click)="add()" />
+			<input type="button" value="-" (click)="subtract()" />
+			<input type="button" value="X" (click)="multiply()" />
+			<input type="button" value="/" (click)="divide()" />
+		</div>
+	</div>
+</div>

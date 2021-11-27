@@ -15,6 +15,7 @@ export class ChildCompViewChildComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+
 	add(): void {
 		this.result = this.firstNumber + this.secondNumber;
 		this.displayFun.emit(this.result);
