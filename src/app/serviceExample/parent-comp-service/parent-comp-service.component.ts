@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { CommunicationServiceService } from 'src/app/communication-service.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { CommunicationServiceService } from 'src/app/communication-service.servi
 })
 export class ParentCompServiceComponent implements OnInit, OnDestroy {
 	result: string = '';
+	result$: Observable<number> = new Observable();
 	mySubscription: Subscription = new Subscription();
 	constructor(private communicationServiceService: CommunicationServiceService) {}
 
@@ -18,6 +19,7 @@ export class ParentCompServiceComponent implements OnInit, OnDestroy {
 				this.result = 'Result:' + res;
 			})
 		);
+		this.result$ = this.communicationServiceService.getResult();
 	}
 
 	ngOnDestroy() {

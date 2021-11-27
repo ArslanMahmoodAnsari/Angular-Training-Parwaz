@@ -1,0 +1,17 @@
+<p>{{ todayDate | date }}</p>
+<p>{{ todayDate | date: 'longDate' }}</p>
+<p>{{ todayDate | date: 'shortDate' }}</p>
+<p>{{ todayDate | date: 'short' }}</p>
+<p>{{ todayDate | date: 'fullTime' }}</p>
+<hr />
+<p>{{ todayDate | localDate: 'ko-KR' }}</p>
+<p dir="rtl">{{ todayDate | localDate: 'ar' }}</p>
+<p>{{ todayDate | localDate: 'en' }}</p>
+<p>{{ todayDate | localDate: 'ko-KR' }}</p>
+<hr />
+<p>{{ amount }}</p>
+<p>{{ amount | currency: 'usd':'$' }}</p>
+<p>{{ amount | currency: 'PKR':'Rs.' }}</p>
+<p>{{ amount | currency: 'gbp' }}</p>
+<p>{{ message }}</p>
+<p>{{ message | uppercase }}</p>

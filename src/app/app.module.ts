@@ -10,6 +10,8 @@ import { ChildCompViewChildComponent } from './viewChildExample/child-comp-view-
 import { FormsModule } from '@angular/forms';
 import { ChildCompServiceComponent } from './serviceExample/child-comp-service/child-comp-service.component';
 import { ParentCompServiceComponent } from './serviceExample/parent-comp-service/parent-comp-service.component';
+import { PipesExampleComponent } from './pipes-example/pipes-example.component';
+import { LocalDatePipe } from './shared/pipes/local-date.pipe';
 
 @NgModule({
 	declarations: [
@@ -21,6 +23,8 @@ import { ParentCompServiceComponent } from './serviceExample/parent-comp-service
 		ChildCompViewChildComponent,
 		ChildCompServiceComponent,
 		ParentCompServiceComponent,
+		PipesExampleComponent,
+		LocalDatePipe,
 	],
 	imports: [BrowserModule, FormsModule],
 	providers: [],
