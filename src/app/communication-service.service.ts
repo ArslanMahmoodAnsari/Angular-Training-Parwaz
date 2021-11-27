@@ -5,32 +5,26 @@ import { Observable, BehaviorSubject } from 'rxjs';
 	providedIn: 'root',
 })
 export class CommunicationServiceService {
-	// firstNumber: number = 0;
-	// secondNumber: number = 0;
-	// result: number = 0;
 	resultSubject: BehaviorSubject<number>;
 	result$: Observable<number>;
+
+	resetSubject: BehaviorSubject<boolean>;
+	reset$: Observable<boolean>;
 
 	constructor() {
 		this.resultSubject = new BehaviorSubject<number>(0);
 		this.result$ = this.resultSubject.asObservable();
+		this.resetSubject = new BehaviorSubject<boolean>(true);
+		this.reset$ = this.resetSubject.asObservable();
 	}
 
-	// add(): void {
-	// 	this.result = this.firstNumber + this.secondNumber;
-	// }
+	setReset(val: boolean) {
+		this.resetSubject.next(val);
+	}
 
-	// subtract(): void {
-	// 	this.result = this.firstNumber - this.secondNumber;
-	// }
-
-	// multiply(): void {
-	// 	this.result = this.firstNumber * this.secondNumber;
-	// }
-
-	// divide(): void {
-	// 	this.result = this.firstNumber / this.secondNumber;
-	// }
+	getReset(): Observable<boolean> {
+		return this.reset$;
+	}
 
 	getResult(): Observable<number> {
 		return this.result$;
@@ -41,8 +35,6 @@ export class CommunicationServiceService {
 	}
 
 	clear(): void {
-		// this.firstNumber = 0;
-		// this.secondNumber = 0;
 		this.resultSubject.next(0);
 	}
 }

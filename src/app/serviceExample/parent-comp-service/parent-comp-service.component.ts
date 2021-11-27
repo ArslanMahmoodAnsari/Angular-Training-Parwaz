@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CommunicationServiceService } from 'src/app/communication-service.service';
 
 @Component({
@@ -6,17 +7,21 @@ import { CommunicationServiceService } from 'src/app/communication-service.servi
 	templateUrl: './parent-comp-service.component.html',
 	styleUrls: ['./parent-comp-service.component.css'],
 })
-export class ParentCompServiceComponent implements OnInit {
+export class ParentCompServiceComponent implements OnInit, OnDestroy {
 	result: string = '';
+	mySubscription: Subscription = new Subscription();
 	constructor(private communicationServiceService: CommunicationServiceService) {}
 
 	ngOnInit(): void {
-		this.communicationServiceService.getResult().subscribe((res) => {
-			console.log('====Hello form sunscribe==');
-			console.log(res);
-			console.log('====================================');
-			this.result = 'Result:' + res;
-		});
+		this.mySubscription.add(
+			this.communicationServiceService.getResult().subscribe((res) => {
+				this.result = 'Result:' + res;
+			})
+		);
+	}
+
+	ngOnDestroy() {
+		this.mySubscription.unsubscribe();
 	}
 
 	displayFun(value: number) {
@@ -24,6 +29,7 @@ export class ParentCompServiceComponent implements OnInit {
 	}
 
 	reset() {
-		// this._childControls.clear();
+		this.communicationServiceService.setResult(0);
+		this.communicationServiceService.setReset(true);
 	}
 }
