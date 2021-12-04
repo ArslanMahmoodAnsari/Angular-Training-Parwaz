@@ -4,6 +4,26 @@
 
 <!-- <app-parent-comp-view-child></app-parent-comp-view-child> -->
 
-<app-parent-comp-service></app-parent-comp-service>
+<!-- <app-parent-comp-service></app-parent-comp-service> -->
 
 <!-- <app-pipes-example></app-pipes-example> -->
+
+<ul>
+	<li>
+		<a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+			Classes
+		</a>
+	</li>
+	<li>
+		<a [routerLink]="'/student/1'" routerLinkActive="active" [queryParams]="{ editing: 1 }">
+			Teachers
+		</a>
+	</li>
+	<li>
+		<a [routerLink]="['/student', 2]" routerLinkActive="active" [queryParams]="{ editing: 0 }">
+			Students</a
+		>
+	</li>
+</ul>
+
+<router-outlet></router-outlet>

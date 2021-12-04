@@ -12,6 +12,12 @@ import { ChildCompServiceComponent } from './serviceExample/child-comp-service/c
 import { ParentCompServiceComponent } from './serviceExample/parent-comp-service/parent-comp-service.component';
 import { PipesExampleComponent } from './pipes-example/pipes-example.component';
 import { LocalDatePipe } from './shared/pipes/local-date.pipe';
+import { StudentsComponent } from './routing-example/students/students.component';
+import { TeacherComponent } from './routing-example/teacher/teacher.component';
+import { ClassesComponent } from './routing-example/classes/classes.component';
+import { StudentComponent } from './routing-example/students/student/student.component';
+import { AppRoutingModule } from './app.routing';
+import { NoComponetFoundComponent } from './no-componet-found/no-componet-found.component';
 
 @NgModule({
 	declarations: [
@@ -25,8 +31,13 @@ import { LocalDatePipe } from './shared/pipes/local-date.pipe';
 		ParentCompServiceComponent,
 		PipesExampleComponent,
 		LocalDatePipe,
+		StudentsComponent,
+		TeacherComponent,
+		ClassesComponent,
+		StudentComponent,
+  NoComponetFoundComponent,
 	],
-	imports: [BrowserModule, FormsModule],
+	imports: [BrowserModule, FormsModule, AppRoutingModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

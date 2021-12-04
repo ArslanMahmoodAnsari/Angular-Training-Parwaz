@@ -1,0 +1,13 @@
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+	</tr>
+	<tr *ngFor="let student of students" (click)="loadStudent(student)">
+		<td>{{ student.id }}</td>
+		<td>{{ student.name }}</td>
+	</tr>
+</table>
+
+<h1>Selected Student:</h1>
+<router-outlet></router-outlet>
