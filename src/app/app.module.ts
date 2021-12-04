@@ -18,6 +18,8 @@ import { ClassesComponent } from './routing-example/classes/classes.component';
 import { StudentComponent } from './routing-example/students/student/student.component';
 import { AppRoutingModule } from './app.routing';
 import { NoComponetFoundComponent } from './no-componet-found/no-componet-found.component';
+import { AuthGuard } from './auth-guard.service';
+import { NeedAuthComponent } from './need-auth/need-auth.component';
 
 @NgModule({
 	declarations: [
@@ -35,10 +37,11 @@ import { NoComponetFoundComponent } from './no-componet-found/no-componet-found.
 		TeacherComponent,
 		ClassesComponent,
 		StudentComponent,
-  NoComponetFoundComponent,
+		NoComponetFoundComponent,
+		NeedAuthComponent,
 	],
 	imports: [BrowserModule, FormsModule, AppRoutingModule],
-	providers: [],
+	providers: [AuthGuard],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

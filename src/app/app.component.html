@@ -8,6 +8,8 @@
 
 <!-- <app-pipes-example></app-pipes-example> -->
 
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
 <ul>
 	<li>
 		<a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
@@ -15,14 +17,10 @@
 		</a>
 	</li>
 	<li>
-		<a [routerLink]="'/student/1'" routerLinkActive="active" [queryParams]="{ editing: 1 }">
-			Teachers
-		</a>
+		<a [routerLink]="'teacher'" routerLinkActive="active"> Teachers </a>
 	</li>
 	<li>
-		<a [routerLink]="['/student', 2]" routerLinkActive="active" [queryParams]="{ editing: 0 }">
-			Students</a
-		>
+		<a [routerLink]="['/student']" routerLinkActive="active"> Students</a>
 	</li>
 </ul>
 
