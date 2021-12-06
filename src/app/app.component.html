@@ -7,5 +7,23 @@
 <!--<app-parent-comp-service></app-parent-comp-service>-->
 <!--<app-angular-forms></app-angular-forms>-->
 <!--<app-model-driven-forms></app-model-driven-forms>-->
-<app-employee-list></app-employee-list>
+<!--<app-employee-list></app-employee-list>-->
 <!-- <app-pipes-example></app-pipes-example> -->
+
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
+<ul>
+	<li>
+		<a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+			Classes
+		</a>
+	</li>
+	<li>
+		<a [routerLink]="'teacher'" routerLinkActive="active"> Teachers </a>
+	</li>
+	<li>
+		<a [routerLink]="['/student']" routerLinkActive="active"> Students</a>
+	</li>
+</ul>
+
+<router-outlet></router-outlet>

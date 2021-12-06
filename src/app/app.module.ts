@@ -17,6 +17,14 @@ import { ModelDrivenFormsComponent } from './model-driven-forms/model-driven-for
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import {HttpClientModule} from "@angular/common/http";
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
+import { StudentsComponent } from './routing-example/students/students.component';
+import { TeacherComponent } from './routing-example/teacher/teacher.component';
+import { ClassesComponent } from './routing-example/classes/classes.component';
+import { StudentComponent } from './routing-example/students/student/student.component';
+import { AppRoutingModule } from './app.routing';
+import { NoComponetFoundComponent } from './no-componet-found/no-componet-found.component';
+import { AuthGuard } from './auth-guard.service';
+import { NeedAuthComponent } from './need-auth/need-auth.component';
 
 @NgModule({
 	declarations: [
@@ -34,9 +42,15 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
   ModelDrivenFormsComponent,
   EmployeeListComponent,
   EmployeeAddComponent,
+		StudentsComponent,
+		TeacherComponent,
+		ClassesComponent,
+		StudentComponent,
+		NoComponetFoundComponent,
+		NeedAuthComponent,
 	],
-    imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
-	providers: [],
+    imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule],
+	providers: [AuthGuard],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
