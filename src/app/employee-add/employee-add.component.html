@@ -1,0 +1,41 @@
+<div class="row row-lg">
+  <h4>Provide Employee Details</h4>
+  <table class="table">
+    <tr>
+      <td>Employee Id</td>
+      <td><input type="text" [(ngModel)]="_model.id" /></td>
+    </tr>
+    <tr>
+      <td>Employee Name</td>
+      <td><input type="text" [(ngModel)]="_model.name" /></td>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td><input type="text" [(ngModel)]="_model.username" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="email" [(ngModel)]="_model.email" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" [(ngModel)]="_model.phone" /></td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td><input type="text" [(ngModel)]="_model.address.city" /></td>
+    </tr>
+    <tr>
+      <td>Street</td>
+      <td><input type="text" [(ngModel)]="_model.address.street" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <input type="button" value="Submit" (click)="submit()" />
+
+        <input type="button" value="Cancel" (click)="onCancel()" />
+      </td>
+    </tr>
+  </table>
+</div>

@@ -14,6 +14,9 @@ import { PipesExampleComponent } from './pipes-example/pipes-example.component';
 import { LocalDatePipe } from './shared/pipes/local-date.pipe';
 import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { ModelDrivenFormsComponent } from './model-driven-forms/model-driven-forms.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import {HttpClientModule} from "@angular/common/http";
+import { EmployeeAddComponent } from './employee-add/employee-add.component';
 
 @NgModule({
 	declarations: [
@@ -29,8 +32,10 @@ import { ModelDrivenFormsComponent } from './model-driven-forms/model-driven-for
 		LocalDatePipe,
   AngularFormsComponent,
   ModelDrivenFormsComponent,
+  EmployeeListComponent,
+  EmployeeAddComponent,
 	],
-    imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+    imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

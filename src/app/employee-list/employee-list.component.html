@@ -1,0 +1,55 @@
+<div class="panel">
+  <h3>HTTP Module Sample - Add and Fetch Data</h3>
+  <div class="panel-body container-fluid" *ngIf="showDetails">
+    <div class="row row-lg">
+      <table class="table" style="width:100%;">
+        <thead>
+        <tr>
+          <th class="cell-100">Srl No</th>
+          <th class="cell-300">Name</th>
+          <th class="cell-300">User Name</th>
+          <th class="cell-300">Email</th>
+          <th class="cell-300">Phone</th>
+          <th class="cell-300">City</th>
+          <th class="cell-300">Street</th>
+          <th class="cell-300">Edit</th>
+          <th class="cell-300">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of data">
+          <td class="cell-100">{{item.id}}</td>
+          <td class="cell-300">{{item.name}}</td>
+          <td class="cell-300">{{item.username}}</td>
+          <td class="cell-300">{{item.email}}</td>
+          <td class="cell-300">{{item.phone}}</td>
+          <td class="cell-300">{{item.address.city}}</td>
+          <td class="cell-300">{{item.address.street}}</td>
+          <td class="cell-180">
+            <a style="cursor:pointer;">
+              <span class="badge badge-primary">Edit</span>
+            </a>
+          </td>
+          <td>
+            <a style="cursor:pointer;">
+              <span class="badge badge-danger">Delete</span>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <p>
+        <button class="btn btn-primary" (click)="addEmployee()">
+          Add Employee
+        </button>
+      </p>
+    </div>
+  </div>
+  <div  class="panel-body container-fluid" *ngIf="showEmployee">
+      <app-employee-add (onHide)="onHide($event);"></app-employee-add>
+<!--    <employee-add (onHide)="onHide($event);"></employee-add>-->
+  </div>
+<!--  <div  class="panel-body container-fluid" *ngIf="editEmployee">-->
+<!--    <employee-update [source]="_selectedData" (onHide)="onHide($event);"></employee-update>-->
+<!--  </div>-->
+</div>
